@@ -1,24 +1,23 @@
 <template>
-  <div class="min-h-screen  flex flex-col bg-primary">
+  <div class=" min-h-screen flex flex-col bg-primary">
     <!-- Navigation -->
     <Navbar/>
 
     <!-- Main Content -->
-    <main class="flex-1  overflow-y-auto relative">
+    <main class="flex-1 min-h-[93vh] h-full overflow-y-auto relative">
       <router-view />
     </main>
-          <Navigation />
+          <Navigation  v-if="$route.meta.showNavigation" />
 
     <!-- Footer -->
-    <footer class="p-4 border-t border-secondary bg-secondary text-center text-primary">
-      <p>© {{ currentYear }} Your App Name. All rights reserved.</p>
-    </footer>
+    <Footer v-if="$route.meta.showFooter" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import Navbar from './components/Navbar/Navbar.vue'
+import Footer from './components/Footer.vue'
 import Navigation from './components/Navbar/Navigation.vue'
 
 

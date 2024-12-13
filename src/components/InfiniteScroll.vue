@@ -1,7 +1,6 @@
 <template>
   <div class="relative overflow-hidden w-full py-4">
     <div class="flex animate-scroll">
-      <!-- Premier groupe d'éléments -->
       <div class="flex items-center gap-10 whitespace-nowrap">
         <template v-for="(item, index) in items" :key="`first-${index}`">
           <div class="flex-shrink-0">
@@ -21,7 +20,6 @@
         </template>
       </div>
 
-      <!-- Duplication pour un défilement sans couture -->
       <div class="flex items-center gap-10 whitespace-nowrap">
         <template v-for="(item, index) in items" :key="`second-${index}`">
           <div class="flex-shrink-0">

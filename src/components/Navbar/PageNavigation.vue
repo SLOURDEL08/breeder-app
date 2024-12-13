@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full uppercase flex gap-14 text-xs font-light items-center justify-start pl-20 py-4 border-t border-secondary sticky bottom-0 bg-primary">
+  <nav class="w-full uppercase flex gap-14 text-xs font-light items-center justify-start pl-20 py-4 border-t border-secondary">
     <router-link 
       v-for="item in navigationItems" 
       :key="item.path"
@@ -16,7 +16,6 @@ const navigationItems = [
   { name: 'Wine', path: '/wine' },
   { name: 'Spirits', path: '/spirit' },
   { name: 'Brands', path: '/brands' },
-  { name: 'About', path: '/about' },
-  { name: 'News', path: '/news' }
+  { name: 'About', path: '/about' }
 ] as const
 </script>
