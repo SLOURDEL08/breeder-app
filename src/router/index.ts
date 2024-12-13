@@ -28,8 +28,8 @@ const routes: RouteRecordRaw[] = [
     name: 'wine',
     component: WineView,
     meta: {
-      showNavigation: false,
-      showFooter: false
+      showNavigation: true,
+      showFooter: true
 
     }
   },
@@ -38,7 +38,9 @@ const routes: RouteRecordRaw[] = [
     name: 'spirit',
     component: SpiritView,
     meta: {
-      showNavigation: false 
+      showNavigation: true,
+            showFooter: true
+
     }
   },
    {
@@ -46,7 +48,7 @@ const routes: RouteRecordRaw[] = [
     name: 'brands',
     component: BrandsView,
     meta: {
-      showNavigation: false,
+      showNavigation: true,
             showFooter: true
 
     }
@@ -56,7 +58,8 @@ const routes: RouteRecordRaw[] = [
     name: 'about',
     component: AboutView,
     meta: {
-      showNavigation: false 
+      showNavigation: true, 
+      showFooter: true
     }
   },
 ]

@@ -1,5 +1,9 @@
 <template>
-  <Layout class="">
+  <Layout
+   content-before-left-col-span="0"
+    content-left-col-span="8"
+  content-right-col-span="4"
+  class="">
     <template #content-left>
       <div class="h-[93vh] flex flex-col">
         <div class="flex-1 bg-[#f2d556] flex flex-col justify-between">
@@ -10,7 +14,7 @@
           
           <RegionMap :currentIndex="currentIndex"/>
         </div>
-        <PageNavigation/>
+      
       </div>
     </template>
 

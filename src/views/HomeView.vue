@@ -1,7 +1,10 @@
 <template>
-  <Layout>
+  <Layout
+    content-left-col-span="8"
+  content-right-col-span="4"
+  content-before-left-col-span="0">
     <template #header-left>
-      <div class="relative w-full h-[350px]">
+      <div class="relative w-full h-[500px]">
         <video 
           class="w-full h-full object-cover" 
           autoplay 

@@ -1,37 +1,89 @@
 <template>
-  <Layout class="">
-
+  <Layout
+    content-before-left-col-span="3"
+    content-left-col-span="5"
+  content-right-col-span="4"
+  class="hide-scrollbar">
     <template #content-left>
-      <div class="h-full  border-secondary">
-        <div class="h-[80vh] flex flex-col justify-between">
-            <div class="flex flex-col">
-                <span class="uppercase font-light text-lg">ABOUT</span>
-            <span class="text-3xl hidden leading-8">Among all human artifacts, <b class="font-light italic">wine</b> is the one most capable of reconciling the ancient contest between <b class="font-light italic">nature</b> and <b class="font-light italic">culture</b>. In our <b class="font-light italic">territories</b> in power, we have chosen to release through the craft of wine, the energies and latent potential of man and the earth</span>
-            </div>
-            
-        
+      <div class="h-[93vh]  flex flex-col border-secondary overflow-y-auto">
+        <div class="flex-1 bg-yellow-300 overflow-y-auto hide-scrollbar grid grid-cols-1 justify-start divide-y divide-yellow-300">
+          <div
+            v-for="(item, index) in farmerTestimony"
+            :key="index"
+            class="bg-secondary py-20 text-yellow-300 p-3"
+          >
+            <h2 class="text-lg uppercase font-light">{{ item.title }}</h2>
+            <p class="text-5xl">{{ item.description }}</p>
+          </div>
         </div>
-        <PageNavigation/>
       </div>
     </template>
 
-    <template #content-right>
-        <div class=" h-full border-secondary">
-               dd
-        </div>
-  
-    </template>
+  <template #content-right>
+  <div class="h-[93vh] border-secondary overflow-hidden">
+    <div class="flex w-max flex-col h-full">
+      <div
+        v-for="(item, index) in farmerTestimony"
+        :key="index"
+        class="flex-1 border-r flex items-center justify-start border-b last:border-b-0 border-secondary"
+      >
+        <img
+          :src="item.avatar"
+          alt="Avatar"
+          class="h-full object-contain max-h-full w-auto rounded-full"
+        />
+      </div>
+    </div>
+  </div>
+</template>
   </Layout>
 </template>
 
 <script setup lang="ts">
 import Layout from '../layouts/Layout.vue'
-import InfiniteScroll from '../components/InfiniteScroll.vue'
 import PageNavigation from '../components/Navbar/PageNavigation.vue'
-import RegionMap from '../components/InteractiveRegionMap/RegionMap.vue'
-import GridImageHover from '../components/GridImageHover/GridImageHover.vue'
-import GridRightContent from '../components/GridContent/GridRightContent.vue'
 
-
-
+// Liste des témoignages
+const farmerTestimony = [
+  {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+  {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+   {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+   {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+   {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+   {
+    avatar: 'https://cdn.sanity.io/images/tduq6a61/production/2a215e6692f4dc3f3d4c6a30e6c3343e26013ea9-112x112.svg',
+    title: 'Album di Famiglia',
+    description:
+      "In that of Cerignola, on a piece of land wrested from the brackish water by man's labor in the early 20th century, in a soil mixed with water and earth, salt and hope, vines and fruit trees grow and thrive, giving life to Album di Famiglia.",
+  },
+]
 </script>
+
+<style scoped>
+
+</style>

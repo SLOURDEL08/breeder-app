@@ -1,5 +1,9 @@
 <template>
- <Layout class=" hide-scrollbar ">
+ <Layout
+  content-before-left-col-span="2"
+    content-left-col-span="6"
+  content-right-col-span="4"
+ class=" hide-scrollbar ">
  <template #content-left>
       <div class="h-[93vh] flex flex-col border-secondary">
         <div class="flex-1 bg-yellow-300 flex flex-col justify-between">
@@ -59,7 +63,6 @@
            </div>
          </div>
        </div>
-       <PageNavigation/>
      </div>
    </template>
 
@@ -103,7 +106,6 @@ import { ref, onMounted, onUnmounted, computed, nextTick } from 'vue'
 
 import Layout from '../layouts/Layout.vue'
 import InfiniteScroll from '../components/InfiniteScroll.vue'
-import PageNavigation from '../components/Navbar/PageNavigation.vue'
 import RegionMap from '../components/InteractiveRegionMap/RegionMap.vue'
 import GridImageHover from '../components/GridImageHover/GridImageHover.vue'
 import GridRightContent from '../components/GridContent/GridRightContent.vue'

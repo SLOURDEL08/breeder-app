@@ -1,10 +1,10 @@
 <template>
-  <nav class="w-full uppercase flex gap-14 text-xs font-light items-center justify-start pl-20 py-4 border-t border-secondary sticky bottom-0 bg-primary">
+<nav class="w-full uppercase grid grid-cols-12 text-xs font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
     <router-link 
       v-for="item in navigationItems" 
       :key="item.path"
       :to="item.path"
-      class="hover:opacity-70 transition-opacity"
+      class="hover:opacity-70 first:border-l border-secondary py-4 px-10 transition-opacity"
     >
       {{ item.name }}
     </router-link>
