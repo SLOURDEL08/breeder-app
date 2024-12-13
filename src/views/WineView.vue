@@ -60,25 +60,60 @@ const winesData = [
     name: 'Toscana Wine',
     bottleImage: '/wine/ancestrale.webp'
   },
- 
+   {
+    region: 'marche',
+    name: 'Marche',
+    bottleImage: '/wine/ancestrale.webp'
+  },
+    {
+    region: 'puglia',
+    name: 'Puglia',
+    bottleImage: '/wine/ancestrale.webp'
+  },
   
 ]
 
-const handleWheel = (event: WheelEvent) => {
-  // On détecte seulement le scroll horizontal ou le scroll vertical qu'on convertit en horizontal
-  if (event.deltaX !== 0 || event.deltaY !== 0) {
-    if (event.deltaX > 0 || event.deltaY > 0) {
-      // Scroll vers la droite
-      currentIndex.value = Math.min(currentIndex.value + 1, winesData.length - 1)
-    } else {
-      // Scroll vers la gauche
-      currentIndex.value = Math.max(currentIndex.value - 1, 0)
+const handleWheel = (() => {
+  let isThrottled = false;
+  let scrollAccumulator = 0;
+  const scrollThreshold = 100;
+  const throttleDelay = 500;
+
+  return (event: WheelEvent) => {
+    if (isThrottled) return;
+    event.preventDefault();
+
+    // Accumuler le scroll (vertical ou horizontal)
+    const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) 
+      ? event.deltaX 
+      : event.deltaY;
+    
+    scrollAccumulator += Math.abs(delta);
+
+    // Ne changer que lorsque l'accumulateur atteint le seuil
+    if (scrollAccumulator >= scrollThreshold) {
+      isThrottled = true;
+      
+      // Déterminer la direction en fonction du signe de delta
+      if (delta > 0 && currentIndex.value < winesData.length - 1) {
+        currentIndex.value += 1;
+      } else if (delta < 0 && currentIndex.value > 0) {
+        currentIndex.value -= 1;
+      }
+
+      // Réinitialiser l'accumulateur
+      scrollAccumulator = 0;
+
+      // Attendre avant de permettre le prochain changement
+      setTimeout(() => {
+        isThrottled = false;
+      }, throttleDelay);
     }
   }
-}
+})();
 
 onMounted(() => {
-  window.addEventListener('wheel', handleWheel)
+  window.addEventListener('wheel', handleWheel, { passive: false })
 })
 
 onUnmounted(() => {

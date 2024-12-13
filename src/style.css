@@ -6,3 +6,21 @@
   --primary: #e4e1db;
   --secondary: #151516;
 }
+
+html{
+    -ms-overflow-style: none;  /* Internet Explorer et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+html::-webkit-scrollbar{
+    -ms-overflow-style: none;  /* Internet Explorer et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari et Opera */
+}

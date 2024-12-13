@@ -18,7 +18,9 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: HomeView,
     meta: {
-      showNavigation: true
+      showNavigation: true,
+            showFooter: true
+
     }
   },
   {
@@ -44,7 +46,9 @@ const routes: RouteRecordRaw[] = [
     name: 'brands',
     component: BrandsView,
     meta: {
-      showNavigation: false 
+      showNavigation: false,
+            showFooter: true
+
     }
   },
     {
