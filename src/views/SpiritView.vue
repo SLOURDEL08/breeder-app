@@ -1,9 +1,5 @@
 <template>
-  <Layout
-   content-before-left-col-span="1"
-    content-left-col-span="7"
-  content-right-col-span="4"
-   class="">
+  <Layout class="">
     <template #content-left>
       <div class="h-[93vh] flex flex-col">
         <div class="flex-1 bg-[#f2d556] flex flex-col justify-between">

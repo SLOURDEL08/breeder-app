@@ -11,7 +11,7 @@ html{
     -ms-overflow-style: none;  /* Internet Explorer et Edge */
   scrollbar-width: none;     /* Firefox */
 }
-html::-webkit-scrollbar{
+html{
     -ms-overflow-style: none;  /* Internet Explorer et Edge */
   scrollbar-width: none;     /* Firefox */
 }

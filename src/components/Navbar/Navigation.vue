@@ -1,10 +1,13 @@
 <template>
-<nav class="w-full uppercase grid grid-cols-12 text-xs font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
-    <router-link 
-      v-for="item in navigationItems" 
+  <nav class="w-full uppercase grid grid-cols-12 text-xs font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
+    <router-link
+      v-for="(item, index) in navigationItems"
       :key="item.path"
       :to="item.path"
-      class="hover:opacity-70 first:border-l border-secondary py-4 px-10 transition-opacity"
+      :class="[
+        'hover:opacity-70 border-secondary py-4 px-10 transition-opacity',
+        { 'border-l': currentRoute === item.path }
+      ]"
     >
       {{ item.name }}
     </router-link>
@@ -12,6 +15,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const currentRoute = computed(() => route.path)
+
 const navigationItems = [
   { name: 'Wine', path: '/wine' },
   { name: 'Spirits', path: '/spirit' },

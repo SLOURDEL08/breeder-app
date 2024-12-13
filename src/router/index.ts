@@ -4,6 +4,7 @@ import WineView from '../views/WineView.vue'
 import SpiritView from '../views/SpiritView.vue'
 import BrandsView from '../views/BrandsView.vue'
 import AboutView from '../views/AboutView.vue'
+import NewsView from '../views/NewsView.vue'
 
 declare module 'vue-router' {
   interface RouteMeta {
@@ -57,6 +58,15 @@ const routes: RouteRecordRaw[] = [
     path: '/about',
     name: 'about',
     component: AboutView,
+    meta: {
+      showNavigation: true, 
+      showFooter: true
+    }
+  },
+      {
+    path: '/news',
+    name: 'news',
+    component: NewsView,
     meta: {
       showNavigation: true, 
       showFooter: true
