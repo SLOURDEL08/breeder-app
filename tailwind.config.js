@@ -9,6 +9,7 @@ export default {
       colors: {
         'primary': '#e4e1db',
         'secondary': '#151516',
+        'yellowed':'#f2d556'
       }
     },
     keyframes: {

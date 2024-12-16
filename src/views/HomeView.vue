@@ -27,7 +27,7 @@
     </template>
 
     <template #content-left>
-      <div class="border-r border-secondary">
+      <div class="border- border-secondary">
         <GridImageHover 
           :images="leftImages" 
           grid-cols="grid-cols-2"

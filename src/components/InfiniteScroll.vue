@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden w-full py-4">
+  <div class="relative border-l border-secondary overflow-hidden w-full py-4">
     <div class="flex animate-scroll">
       <div class="flex items-center gap-10 whitespace-nowrap">
         <template v-for="(item, index) in items" :key="`first-${index}`">

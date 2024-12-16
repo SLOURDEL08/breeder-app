@@ -1,9 +1,9 @@
 <template>
-  <div class="relative overflow-hidden group h-full">
+  <div class="relative overflow-hidden group h-full transform-gpu">
     <img 
-      :src="imageSrc" 
+      :src="imageSrc"
       :alt="imageAlt"
-      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      class="w-full h-full object-cover transition-transform duration-500 ease-out transform-gpu group-hover:skew-x-12"
     />
     
     <div class="absolute inset-0 bg-secondary bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-500">
@@ -23,3 +23,10 @@ defineProps<{
   description: string
 }>()
 </script>
+
+<style scoped>
+/* Optionnel : si vous voulez personnaliser davantage l'animation */
+.group img {
+  transform-origin: left center;
+}
+</style>

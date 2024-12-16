@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full uppercase grid grid-cols-12 text-xs font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
+  <nav class="w-full uppercase z-50 grid grid-cols-12 text-sm font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
     <router-link
       v-for="(item, index) in navigationItems"
       :key="item.path"
