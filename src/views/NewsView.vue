@@ -65,8 +65,13 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Layout from '../layouts/Layout.vue'
 import GridLeftContent from '../components/GridContent/GridLeftContent.vue'
+
+const route = useRoute()
+
 
 const newsArticles = [
   {
@@ -164,6 +169,23 @@ const activeNews = computed(() => newsArticles[activeNewsIndex.value])
 const setActiveNews = (index: number) => {
   activeNewsIndex.value = index
 }
+
+const updateActiveIndexFromUrl = () => {
+  const urlIndex = route.query.activeIndex
+  if (urlIndex !== undefined) {
+    activeNewsIndex.value = parseInt(urlIndex as string)
+  }
+}
+
+watch(
+  () => route.query.activeIndex,
+  () => updateActiveIndexFromUrl()
+)
+
+// Initialiser l'index au montage du composant
+onMounted(() => {
+  updateActiveIndexFromUrl()
+})
 </script>
 
 

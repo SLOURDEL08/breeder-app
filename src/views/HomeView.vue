@@ -52,13 +52,13 @@ import GridRightContent from '../components/GridContent/GridRightContent.vue'
 
 const leftImages = [
   {
-    src: '/public/svg/circle-moon.svg',
+    src: 'https://cdn.sanity.io/images/tduq6a61/production/6827d7123fa0a3fa67395ec3ba5cc0be7900992c-1281x1920.jpg?rect=28,197,1253,1422&w=1000&fit=max&auto=format',
     alt: 'Moon Image',
     title: 'The Moon',
     description: 'A beautiful night sky'
   },
   {
-    src: '/public/svg/sun-card.svg',
+    src: 'https://cdn.sanity.io/images/tduq6a61/production/70fe0090b7e20a5965177d73fa13d7025877113a-912x904.png?w=1000&fit=max&auto=format',
     alt: 'Sun Image',
     title: 'The Sun',
     description: 'A bright day ahead'
@@ -70,13 +70,13 @@ const leftImages = [
     description: 'Lost in space'
   },
   {
-    src: '/public/svg/sun-card.svg',
+    src: 'https://cdn.sanity.io/images/tduq6a61/production/736bfa0f4da291f21e665256252a364b64e94403-1281x1920.jpg?rect=0,409,1281,1309&w=1000&fit=max&auto=format',
     alt: 'Galaxy Image',
     title: 'The Galaxy',
     description: 'Infinite possibilities'
     },
   {
-    src: '/public/svg/circle-moon.svg',
+    src: 'https://cdn.sanity.io/images/tduq6a61/production/96df5f805db9102e67c90e7dc413619e4c817a2c-112x112.svg?w=1000&fit=max&auto=format',
     alt: 'Stars Image',
     title: 'The Stars',
     description: 'Lost in space'
@@ -91,14 +91,14 @@ const leftImages = [
 
 const rightImages = [
   {
-    src: '/public/svg/circle-moon.svg',
+    src: 'https://cdn.shopify.com/s/files/1/0610/2902/3943/products/cometbitter_d3a42b08-1a77-482e-95fe-2400d57c6868_1200x_crop_center.png?v=1647275562',
     alt: 'Large Image',
     title: 'Featured Image',
     description: 'Main attraction',
     isLarge: true
   },
   {
-    src: '/public/svg/sun-card.svg',
+    src: 'https://cdn.sanity.io/images/tduq6a61/production/020b85c662153c4b648c7f8dbed07e0147933ddc-4272x2477.jpg?w=1000&fit=max&auto=format',
     alt: 'Small Image 1',
     title: 'Small 1',
     description: 'Additional content'

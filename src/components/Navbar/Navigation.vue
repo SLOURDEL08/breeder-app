@@ -1,11 +1,20 @@
 <template>
-  <nav class="w-full uppercase z-50 grid grid-cols-12 text-sm font-light items-center justify-start border-t border-secondary sticky bottom-0 bg-primary">
+  <nav
+    class="w-full uppercase z-50 grid grid-cols-12 text-sm font-light items-center justify-start border-t border-secondary sticky bottom-0"
+    :class="{
+      'bg-primary': currentRoute !== '/',
+      'bg-yellowed': currentRoute === '/'
+    }"
+    :style="{
+      transition: 'background-color 0.5s ease-in-out'  // Transition de la couleur de fond
+    }"
+  >
     <router-link
       v-for="(item, index) in navigationItems"
       :key="item.path"
       :to="item.path"
       :class="[
-        'hover:opacity-70 border-secondary py-4 px-10 transition-opacity',
+        'hover:opacity-70 border-secondary py-4 w-full text-center transition-opacity',
         { 'border-l': currentRoute === item.path }
       ]"
     >

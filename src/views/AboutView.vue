@@ -52,13 +52,13 @@
           >
             <div 
               @click="selectTestimony(index)"
-              class="flex-1 bg-primary justify-center items-center h-full cursor-pointer transition-colors duration-300"
+              class="flex bg-primary justify-center items-center h-full cursor-pointer transition-colors duration-300"
               :class="{ 'bg-secondary': activeIndex === index }"
             >
               <img
                 :src="item.avatar"
                 alt="Avatar"
-                class=" object-contain max-h-full w-28 h-28 flex justify-center"
+                class=" object-contain  rounded-full  max-h-full w-28 h-28 flex justify-center"
               />
             </div>
           </div>

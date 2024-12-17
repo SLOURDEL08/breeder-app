@@ -6,6 +6,7 @@ import BrandsView from '../views/BrandsView.vue'
 import AboutView from '../views/AboutView.vue'
 import NewsView from '../views/NewsView.vue'
 
+// Déclare les types des métadonnées de la route
 declare module 'vue-router' {
   interface RouteMeta {
     showNavigation?: boolean
@@ -16,6 +17,7 @@ declare module 'vue-router' {
       left: number
       right: number
     }
+    index?: number
   }
 }
 
@@ -25,6 +27,7 @@ const routes: RouteRecordRaw[] = [
     name: 'home',
     component: HomeView,
     meta: {
+      index: 0,
       showNavigation: true,
       showFooter: true,
       animate: true,
@@ -40,6 +43,7 @@ const routes: RouteRecordRaw[] = [
     name: 'wine',
     component: WineView,
     meta: {
+      index: 1,
       showNavigation: true,
       showFooter: true,
       animate: true,
@@ -53,8 +57,9 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/spirit',
     name: 'spirit',
-    component: SpiritView,
+    component: SpiritView, 
     meta: {
+      index: 2,
       showNavigation: true,
       showFooter: true,
       animate: true,
@@ -70,6 +75,7 @@ const routes: RouteRecordRaw[] = [
     name: 'brands',
     component: BrandsView,
     meta: {
+      index: 3,
       showNavigation: true,
       showFooter: true,
       animate: true,
@@ -85,6 +91,7 @@ const routes: RouteRecordRaw[] = [
     name: 'about',
     component: AboutView,
     meta: {
+      index: 4,
       showNavigation: true,
       showFooter: true,
       animate: true,
@@ -100,6 +107,7 @@ const routes: RouteRecordRaw[] = [
     name: 'news',
     component: NewsView,
     meta: {
+      index: 5,
       showNavigation: true,
       showFooter: true,
       animate: true,
