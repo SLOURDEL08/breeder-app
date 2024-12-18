@@ -5,7 +5,7 @@
     <div class="h-[7vh]"/>
     
     <!-- Main Content -->
-    <main class="flex-1 pl-10 min-h-[93vh] h-full overflow-y-auto relative">
+    <main class="flex-1 max-md:pl-0 pl-10 min-h-[93vh] h-full overflow-y-auto relative">
       <transition
         :name="transitionName"
         mode="out-in"

@@ -3,7 +3,7 @@ interface NewsArticle {
   title: string
   category: string
   article: string
-  author: string
+  author?: string
   date: string
   link?: {
     text: string

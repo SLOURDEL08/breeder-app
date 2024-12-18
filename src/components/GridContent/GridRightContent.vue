@@ -16,28 +16,28 @@
 
         <!-- Premier article (ECLIPSE) -->
         <div 
-            class="p-4 flex flex-col border-b border-secondary justify-between h-1/2 relative transition-colors duration-300 cursor-pointer group"
+            class="p-4 flex flex-col border-b-2  border-secondary justify-between h-1/2 relative transition-colors duration-300 cursor-pointer group"
             @mouseenter="handleHover(0)"
             @mouseleave="handleLeave"
             @click="navigateToNews(1)"
         >
             <span class="text-sm uppercase relative z-10">News</span>
             <div class="flex flex-col relative z-10">
-                <span class="text-4xl leading-9">ECLIPSE Promoted among the 10 italien Gins of the Summer!</span>
+                <span class="text-4xl tracking-tight leading-9">ECLIPSE Promoted among the 10 italien Gins of the Summer!</span>
                 <span class="text-right text-xs">05/08/2022</span>
             </div>
         </div>
 
         <!-- Deuxième article (Avamposti) -->
         <div 
-            class="p-4 flex flex-col justify-between h-1/2 relative transition-colors duration-300 cursor-pointer group"
+            class="p-4 flex flex-col justify-between  border-secondary h-1/2 relative transition-colors duration-300 cursor-pointer group"
             @mouseenter="handleHover(1)"
             @mouseleave="handleLeave"
             @click="navigateToNews(0)" 
         >
             <span class="text-sm uppercase relative z-10">News</span>
             <div class="flex flex-col relative z-10">
-                <span class="text-4xl leading-9">Avamposti, the new trends in Wine & Spirits by Spazio Di Paolo.</span>
+                <span class="text-4xl  tracking-tight leading-9">Avamposti, the new trends in Wine & Spirits by Spazio Di Paolo.</span>
                 <span class="text-right text-xs">05/08/2022</span>
             </div>
         </div>

@@ -21,7 +21,7 @@
       :key="article.id"
       :ref="(el) => { if (el) itemRefs[index] = el as HTMLElement }"
       :class="[
-        'p-4 py-10 last:border-b-0 border-b border-secondary min-h-[250px] flex justify-between items-center cursor-pointer relative group transition-colors duration-300',
+        'p-4 py-10 last:border-b-0 border-b-2 border-secondary min-h-[250px] flex justify-between items-center cursor-pointer relative group transition-colors duration-300',
 
   { 'bg-yellowed': activeIndex === index && !isHovered }
       ]"
@@ -30,8 +30,8 @@
       @click="$emit('select-news', index)"
     >
       <div class="flex space-y-2 flex-col relative z-10">
-        <span class="text-4xl font-light leading-9">{{ article.title }}</span>
-        <span class="text-right text-lg">{{ article.date }}</span>
+        <span class="text-4xl  tracking-tight font-light leading-9">{{ article.title }}</span>
+        <span class="text-right font-light text-base">{{ article.date }}</span>
       </div>
     </div>
   </div>
@@ -44,10 +44,9 @@ interface NewsArticle {
   id: number
   title: string
   article: string
-  author: string
+  author?: string
   date: string
   link?: {
-    text: string
     url: string
   }
 }

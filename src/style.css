@@ -8,6 +8,39 @@
   --yellowed: #f2d556;
 }
 
+@layer base {
+  /* Définir la police Neue */
+  @font-face {
+    font-family: 'Neue';
+    src: url('/fonts/neue/NeueHaasDisplayMedium.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Définir la police Clearface en WOFF et WOFF2 */
+  @font-face {
+    font-family: 'Clearface';
+    src: url('/fonts/clearface/clearface-std-italic.woff2') format('woff2'),
+         url('/fonts/clearface/clearface-std-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* S'applique à tout le document */
+  html, body {
+    font-family: 'Neue', sans-serif;  /* Utilisation de 'sans-serif' comme fallback */
+  }
+
+  /* Appliquer Clearface à tous les éléments <b> */
+  b {
+    font-family: 'Clearface', sans-serif;  /* Utilisation de 'sans-serif' comme fallback */
+  }
+}
+
+
+
+
+
 html{
     -ms-overflow-style: none;  /* Internet Explorer et Edge */
   scrollbar-width: none;     /* Firefox */

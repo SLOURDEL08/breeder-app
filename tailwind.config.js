@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'neue': ['Neue', 'sans-serif'],
+        'clearface': ['Clearface', 'sans-serif'],  
+      },
       colors: {
         'primary': '#e4e1db',
         'secondary': '#151516',
@@ -22,6 +26,7 @@ export default {
         'scroll': 'scroll 20s linear infinite',
       },
     screens: {
+        'md': '796px',
         'lg': '1024px',
       },
   },

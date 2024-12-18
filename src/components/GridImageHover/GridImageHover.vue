@@ -6,8 +6,8 @@
       :class="{
         'h-[600px] bg-yellowed overflow-hidden': image.isLarge,
         'h-[300px] bg-yellowed overflow-hidden': !image.isLarge,
-        'border-r overflow-hidden border-secondary': gridCols === 'grid-cols-2' && index % 2 === 0,
-        'border-b overflow-hidden border-secondary': index < images.length - (gridCols === 'grid-cols-2' && images.length % 2 === 0 ? 2 : 1)
+        'border-r-2 overflow-hidden border-secondary': gridCols === 'grid-cols-2' && index % 2 === 0,
+        'border-b-2 overflow-hidden border-secondary': index < images.length - (gridCols === 'grid-cols-2' && images.length % 2 === 0 ? 2 : 1)
       }"
     >
       <TiltImage

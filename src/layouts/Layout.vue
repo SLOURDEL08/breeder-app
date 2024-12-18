@@ -1,7 +1,8 @@
 <template>
 <div class="border-secondary bg-primary">
   <!-- Header reste identique -->
-  <div class="grid divide-x divide-secondary grid-cols-12 items-center">
+  <div 
+  class="grid  divide-secondary divide-x-2 max-md:divide-x-0 grid-cols-12 max-md:grid-cols-1 items-center">
     <div class="col-span-8 h-full">
       <slot name="header-left" />
     </div>
@@ -17,7 +18,7 @@
   <!-- Modification du transition-group -->
   <transition-group
     :name="transitionName"
-    class="grid divide-x divide-secondary grid-cols-12"
+    class="grid grid-cols-12 max-md:grid-cols-2"
     tag="div"
     mode="out-in"
   >
@@ -26,7 +27,7 @@
       :key="'beforeLeft'"
       :class="[
         getColSpanClass(currentLayout.beforeLeft),
-        'transition-all duration-500 ease-in-out transform'
+        'transition-all  duration-500 ease-in-out transform'
       ]"
       :style="{
         width: currentLayout.beforeLeft > 0 ? 'auto' : '0',
@@ -40,7 +41,7 @@
       :key="'left'"
       :class="[
         getColSpanClass(currentLayout.left),
-        'border-l h-full transition-all duration-500 ease-in-out',
+        'border-l-2 h-full transition-all duration-500 ease-in-out',
         borderClass
       ]"
     >
@@ -51,7 +52,7 @@
       :key="'right'"
       :class="[
         getColSpanClass(currentLayout.right),
-        'border-secondary h-full transition-all duration-500 ease-in-out'
+        'border-secondary border-l-2 h-full transition-all duration-500 ease-in-out'
       ]"
     >
       <slot name="content-right" />
@@ -157,6 +158,13 @@ const transitionName = computed(() => {
 
 const isHomePage = computed(() => route.path === '/')
 const showNavigationOverlay = computed(() => !isHomePage.value && route.meta.showNavigation)
+const isMobile = computed(() => {
+  return window.innerWidth <= 768;
+});
+
+window.addEventListener('resize', () => {
+  isMobile.value;
+});
 </script>
 
 <style scoped>

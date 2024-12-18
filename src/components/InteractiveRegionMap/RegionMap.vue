@@ -1,11 +1,11 @@
 <template>
-  <div class="border-t divide-x  divide-secondary grid grid-cols-8 border-secondary">
+  <div class="border-t-2 divide-x-2 divide-secondary grid grid-cols-8 border-secondary">
     <div class="col-span-2">
       <svg viewBox="0 0 100 100" class="w-full mt-2 ml-2 max-h-44">
         <template v-for="(region, id) in regionsData" :key="id">
           <path
-            :id="id"
-            :ref="el => { if (el) regionsRefs[id] = el }"
+            :id="id.toString()"
+            :ref="(el) => { if (el) regionsRefs[id] = el as HTMLElement }"
             :d="region.path"
             stroke="black"
             stroke-width="0.5"
@@ -15,11 +15,11 @@
       </svg>
     </div>
     <div class="col-span-6 flex flex-col p-4" ref="contentRef">
-      <span>{{ regionsData[activeRegion].name }}</span>
-      <span class="text-4xl">{{ regionsData[activeRegion].wine }}</span>
+      <span>{{ regionsData[activeRegion as keyof typeof regionsData].name }}</span>
+      <span class="text-4xl">{{ regionsData[activeRegion as keyof typeof regionsData].wine }}</span>
       <div class="flex justify-between">
-        <span>{{ regionsData[activeRegion].description }}</span>
-        <span>{{ regionsData[activeRegion].price }}</span>
+        <span>{{ regionsData[activeRegion as keyof typeof regionsData].description }}</span>
+        <span>{{ regionsData[activeRegion as keyof typeof regionsData].price }}</span>
       </div>
     </div>
   </div>
@@ -28,14 +28,28 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
+interface Region {
+  name: string
+  wine: string
+  description: string
+  price: string
+  path: string
+}
+
+type RegionsData = Record<string, Region>
+
+interface RegionsRefs {
+  [key: string]: HTMLElement
+}
+
 const props = defineProps<{
   currentIndex: number
 }>()
 
-const regionsRefs = ref({})
-const contentRef = ref(null)
+const regionsRefs = ref<RegionsRefs>({})
+const contentRef = ref<HTMLElement | null>(null)
 
-const regionsData = {
+const regionsData: RegionsData = {
   veneto: {
     name: 'Veneto',
     wine: 'Prosecco',
@@ -167,7 +181,6 @@ marche: {
 const regionsArray = Object.keys(regionsData)
 const activeRegion = ref(regionsArray[0])
 
-// Surveiller les changements d'index et mettre à jour la région active
 watch(() => props.currentIndex, (newIndex) => {
   activeRegion.value = regionsArray[newIndex]
 })

@@ -9,7 +9,7 @@
         <div class="flex-1 bg-[#f2d556] flex flex-col justify-between">
           <div class="flex pt-20 flex-col p-4">
             <span class="uppercase font-light text-lg">Wine</span>
-            <span class="text-4xl leading-10">Among all human artifacts, <b class="font-light italic">wine</b> is the one most capable of reconciling the ancient contest between <b class="font-light italic">nature</b> and <b class="font-light italic">culture</b>. In our <b class="font-light italic">territories</b> in power, we have chosen to release through the craft of wine, the energies and latent potential of man and the earth</span>
+            <span class="text-4xl font-light leading-10">Among all human artifacts, <b class="font-light italic">wine</b> is the one most capable of reconciling the ancient contest between <b class="font-light italic">nature</b> and <b class="font-light italic">culture</b>. In our <b class="font-light italic">territories</b> in power, we have chosen to release through the craft of wine, the energies and latent potential of man and the earth</span>
           </div>
           
           <RegionMap :currentIndex="currentIndex"/>

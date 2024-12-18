@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full uppercase flex gap-14 text-xs font-light items-center justify-start pl-20 py-4 border-t border-secondary">
+  <nav class="w-full uppercase flex gap-14 text-xs font-light items-center justify-start pl-20 py-4 border-t-2 border-secondary">
     <router-link 
       v-for="item in navigationItems" 
       :key="item.path"

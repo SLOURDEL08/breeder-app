@@ -2,9 +2,11 @@
   <Layout
     content-left-col-span="8"
   content-right-col-span="4"
-  content-before-left-col-span="0">
+  content-before-left-col-span="0"
+  class="border-l-2 border-secondary"
+  >
     <template #header-left>
-      <div class="relative w-full h-[500px]">
+      <div class="relative border-b-2 border-secondary  w-full h-[500px]">
         <video 
           class="w-full h-full object-cover" 
           autoplay 
@@ -19,15 +21,18 @@
     </template>
 
     <template #header-right>
-      <GridRightContent/>
+      <div class="border-b-2 border-secondary h-full"> 
+        <GridRightContent/>
+      </div>
+    
     </template>
 
     <template #separator>
-      <InfiniteScroll class="border-y border-secondary" />
+      <InfiniteScroll class="border-b-2 border-secondary" />
     </template>
 
     <template #content-left>
-      <div class="border- border-secondary">
+      <div>
         <GridImageHover 
           :images="leftImages" 
           grid-cols="grid-cols-2"
@@ -36,10 +41,13 @@
     </template>
 
     <template #content-right>
-      <GridImageHover 
+      <div>
+          <GridImageHover 
         :images="rightImages" 
         grid-cols="grid-cols-1"
       />
+      </div>
+    
     </template>
   </Layout>
 </template>

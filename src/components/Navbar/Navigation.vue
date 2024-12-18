@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full uppercase z-50 grid grid-cols-12 text-sm font-light items-center justify-start border-t border-secondary sticky bottom-0"
+    class="w-full uppercase z-50 grid grid-cols-12 max-md:grid-cols-6 text-sm font-light items-center justify-start border-t-2 border-secondary sticky bottom-0"
     :class="{
       'bg-primary': currentRoute !== '/',
       'bg-yellowed': currentRoute === '/'
@@ -15,7 +15,7 @@
       :to="item.path"
       :class="[
         'hover:opacity-70 border-secondary py-4 w-full text-center transition-opacity',
-        { 'border-l': currentRoute === item.path }
+        { 'border-l-2': currentRoute === item.path }
       ]"
     >
       {{ item.name }}
