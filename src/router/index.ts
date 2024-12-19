@@ -57,8 +57,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/spirit',
     name: 'spirit',
-    component: SpiritView, 
-    meta: {
+    component: SpiritView,
+     meta: {
       index: 2,
       showNavigation: true,
       showFooter: true,
@@ -123,7 +123,7 @@ const routes: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_, __, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {
