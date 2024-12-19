@@ -10,7 +10,7 @@
     }"
   >
     <router-link
-      v-for="(item, index) in navigationItems"
+      v-for="item in navigationItems"
       :key="item.path"
       :to="item.path"
       :class="[

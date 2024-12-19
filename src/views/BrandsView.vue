@@ -1,4 +1,3 @@
-
 <template>
   <Layout
     content-before-left-col-span="2"
@@ -26,19 +25,19 @@
               <!-- Description divisée en lignes -->
               <div class="paragraph-container overflow-hidden">
                <div 
-    v-for="(line, index) in splitDescription" 
-    :key="index" 
-    class="line-wrapper inline-block"
-  >
-    <Transition name="line" mode="out-in">
-      <span 
-        :key="`desc-${activeBrand}-${index}`" 
-        class="text-3xl font-neue tracking-tight font-light leading-8 inline-block"
-        v-html="line"
-      >
-      </span>
-    </Transition>
-  </div>
+                 v-for="(line, index) in splitDescription" 
+                 :key="index" 
+                 class="line-wrapper inline-block"
+               >
+                 <Transition name="line" mode="out-in">
+                   <span 
+                     :key="`desc-${activeBrand}-${index}`" 
+                     class="text-3xl font-neue tracking-tight font-light leading-8 inline-block"
+                     v-html="line"
+                   >
+                   </span>
+                 </Transition>
+               </div>
               </div>
             </div>
           </div>
@@ -65,6 +64,7 @@
         <div 
           class="sticky top-0 h-full hide-scrollbar overflow-y-auto"
           ref="bottleContainer"
+          @wheel.passive="handleScroll"
         >
           <div 
             class="flex flex-col"
@@ -138,7 +138,6 @@ const splitDescription = computed(() => {
     currentLine.push(word)
     
     if (currentWordCount === wordsPerLine) {
-      const line = currentLine.join(' ')
       // On reconstruit le HTML pour cette ligne
       let htmlLine = description
         .substring(currentHtmlIndex)
@@ -154,7 +153,10 @@ const splitDescription = computed(() => {
   }
   
   if (currentLine.length > 0) {
-    lines.push(currentLine.join(' '))
+    // Pour la dernière ligne si elle n'est pas complète
+    let remainingHtml = description
+      .substring(currentHtmlIndex)
+    lines.push(remainingHtml)
   }
 
   return lines

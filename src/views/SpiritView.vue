@@ -39,11 +39,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import Layout from '../layouts/Layout.vue'
-import InfiniteScroll from '../components/InfiniteScroll.vue'
 import RegionMap from '../components/InteractiveRegionMap/RegionMap.vue'
-import PageNavigation from '../components/Navbar/PageNavigation.vue'
-import GridImageHover from '../components/GridImageHover/GridImageHover.vue'
-import GridRightContent from '../components/GridContent/GridRightContent.vue'
+
 
 const currentIndex = ref(0)
 

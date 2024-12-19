@@ -2,7 +2,7 @@
 <div class="border-secondary bg-primary">
   <!-- Header reste identique -->
   <div 
-  class="grid  divide-secondary divide-x-2 max-md:divide-x-0 grid-cols-12 max-md:grid-cols-1 items-center">
+  class="grid  divide-secondary divide-x max-md:divide-x-0 grid-cols-12 max-md:grid-cols-1 items-center">
     <div class="col-span-8 h-full">
       <slot name="header-left" />
     </div>
@@ -83,7 +83,7 @@ const router = useRouter()
 const previousRoute = ref<RouteLocationNormalized | null>(null)
 
 // Mettre à jour la route précédente lors des changements de route
-router.beforeEach((to, from) => {
+router.beforeEach((_, from) => {
   previousRoute.value = from
 })
 
@@ -156,8 +156,6 @@ const transitionName = computed(() => {
   return fromIndex > toIndex ? 'layout-left' : 'layout-right'
 })
 
-const isHomePage = computed(() => route.path === '/')
-const showNavigationOverlay = computed(() => !isHomePage.value && route.meta.showNavigation)
 const isMobile = computed(() => {
   return window.innerWidth <= 768;
 });

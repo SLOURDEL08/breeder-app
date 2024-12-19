@@ -107,27 +107,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-interface Route {
-  path: string
-  name: string
-}
-
-const routes: Route[] = [
-  { path: '/wine', name: 'Wine' },
-  { path: '/spirit', name: 'Spirit' },
-  { path: '/brands', name: 'Brands' },
-  { path: '/about', name: 'About' },
-  { path: '/news', name: 'News' }
-]
-
 const isOpen = ref(false)
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value
-}
-
-const closeDropdown = () => {
-  isOpen.value = false
 }
 </script>
 

@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 import Layout from '../../layouts/Layout.vue';
 import Dropdown from './Dropdown.vue';
 

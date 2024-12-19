@@ -31,15 +31,12 @@ import Navbar from './components/Navbar/Navbar.vue'
 import Footer from './components/Footer.vue'
 import Navigation from './components/Navbar/Navigation.vue'
 
-const currentYear = computed(() => new Date().getFullYear())
 const route = useRoute()
 const router = useRouter()
 
-// Garder une trace de la route précédente
 const previousRoute = ref<RouteLocationNormalized | null>(null)
 
-// Mettre à jour la route précédente lors des changements de route
-router.beforeEach((to, from) => {
+router.beforeEach((_, from) => {
   previousRoute.value = from
 })
 
@@ -49,11 +46,9 @@ const transitionName = computed(() => {
   const fromIndex = previousRoute.value.meta?.index as number || 0
   const toIndex = route.meta?.index as number || 0
   
-  // Si on remonte dans la hiérarchie (ex: de News vers About)
   if (fromIndex > toIndex) {
     return 'main-transition-left'
   }
-  // Si on descend dans la hiérarchie (ex: de About vers News)
   return 'main-transition-right'
 })
 </script>
