@@ -3,7 +3,7 @@
     content-left-col-span="8"
   content-right-col-span="4"
   content-before-left-col-span="0"
-  class="border-l-2 border-secondary"
+  class="border-l-2 border-secondary max-md:"
   >
     <template #header-left>
       <div class="relative border-b-2 border-secondary  w-full h-[500px]">

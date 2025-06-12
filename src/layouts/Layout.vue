@@ -2,7 +2,7 @@
 <div class="border-secondary bg-primary">
   <!-- Header reste identique -->
   <div 
-  class="grid  divide-secondary divide-x max-md:divide-x-0 grid-cols-12 max-md:grid-cols-1 items-center">
+  class="grid  divide-secondary divide-x-2 max-md:divide-x-0 grid-cols-12 max-md:grid-cols-1 items-center">
     <div class="col-span-8 h-full">
       <slot name="header-left" />
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="  relative h-full">
+  <div class="max-md:hidden  relative h-full">
     <!-- Trigger button -->
     <button 
   @click="toggleDropdown"

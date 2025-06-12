@@ -42,7 +42,7 @@
             </div>
           </div>
            
-          <div class="grid divide-x-2 divide-secondary bg-primary h-44 grid-cols-6">
+          <div class="grid divide-x-2 divide-secondary bg-primary max-md:h-auto max-md:border-b-2 border-secondary h-44 grid-cols-6">
             <div 
               v-for="(brand, index) in brands" 
               :key="index"

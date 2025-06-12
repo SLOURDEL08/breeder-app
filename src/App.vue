@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col bg-primary">
     <!-- Navigation -->
-    <Navbar class="pl-10"/>
+    <Navbar class="max-md:pl-0 pl-10"/>
     <div class="h-[7vh]"/>
     
     <!-- Main Content -->

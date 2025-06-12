@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full uppercase z-50 grid grid-cols-12 max-md:grid-cols-6 text-sm font-light items-center justify-start border-t-2 border-secondary sticky bottom-0"
+    class="w-full uppercase z-50 grid grid-cols-12 max-md:flex max-md:pl-0 text-sm font-light items-center justify-start  border-t-2 border-secondary sticky bottom-0"
     :class="{
       'bg-primary': currentRoute !== '/',
       'bg-yellowed': currentRoute === '/'
