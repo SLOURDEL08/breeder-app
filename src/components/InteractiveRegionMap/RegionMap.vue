@@ -79,10 +79,7 @@ const regionsWithProducts = computed(() => {
 
 const activeRegion = ref(regionsWithProducts.value[0])
 
-// Index de la région actuelle dans la liste filtrée
-const currentRegionIndex = computed(() => {
-  return regionsWithProducts.value.findIndex(region => region === activeRegion.value)
-})
+
 
 const getActiveProduct = computed(() => {
   const region = regionsData[activeRegion.value]
